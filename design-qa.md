@@ -99,4 +99,8 @@ The implemented hero retains the visual structure of the supplied reference: a c
 
 The parent contact section now transitions from the existing warm-paper background at the bottom to white at the top. Its charcoal contact panel remains unchanged, preserving the established form and information contrast. Browser-rendered review confirmed the gradient, contact panel, and footer remain legible.
 
+### Mobile Navigation Regression Fix
+
+Opening the mobile drawer had applied `inert` to its ancestor header, which also disabled the visible drawer controls. The inert state now applies only to the underlying navigation bar. At a mobile viewport, browser testing confirmed that the drawer opens, its Services link navigates and closes the drawer, and the Close control returns focus to the menu trigger.
+
 final result: passed
