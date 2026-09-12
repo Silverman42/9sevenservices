@@ -61,4 +61,42 @@ Replace the illustrative copy and generated profiles with approved customer quot
 
 No actionable P0, P1, or P2 differences remain within the gallery and header scope.
 
+## Reference-Inspired Hero Redesign QA
+
+**Source visual truth:** `/Users/sylvesternkeze/Downloads/cap.webp` (project copy: `img/qa-hero-reference.webp`)
+**Implementation:** `index.html` at `http://localhost:4173/#home`
+**Comparison artifact:** `qa-hero-comparison.html`, which presents the source and live implementation side by side
+**State:** default desktop hero, plus responsive checks at 768 × 1000 and 390 × 844 CSS px
+
+### Capture normalization
+
+- Reference: 1504 × 1128 px.
+- Desktop implementation: 1504 × 1128 CSS px at device scale factor 1.
+- Tablet implementation: 768 × 1000 CSS px at device scale factor 1.
+- Mobile implementation: 390 × 844 CSS px at device scale factor 1.
+- The comparison artifact normalizes both desktop views to their complete top-fold canvases for direct visual review.
+
+### Full-view comparison evidence
+
+The implemented hero retains the visual structure of the supplied reference: a centered oversized heading, a seven-tile asymmetric photo collage, rounded image cards, a dark central CTA, a supporting service link, and a quiet lower information row. Its content, generated construction photography, charcoal navigation, warm-paper background, red accent, lead copy, and credential strip all stay aligned with the existing 9Seven site.
+
+### Required fidelity surfaces
+
+- **Typography:** The existing Inter/Oswald system is retained. The display heading is centered, high contrast, and constrained to a stable two-line desktop treatment that reduces cleanly on mobile.
+- **Spacing and layout:** The five-column desktop collage mirrors the reference’s tall inner columns, smaller outer tiles, central image/CTA stack, generous white space, and rounded 20 px image treatment. The mobile layout becomes a two-column mosaic with the main image and CTA spanning both columns.
+- **Colors and tokens:** The established warm paper, charcoal, and 9Seven red are preserved; no gradients or unrelated visual language were added.
+- **Image quality:** Seven coordinated, photorealistic South African service images were generated and saved as quality-82 JPEGs because the local imaging runtime cannot encode WebP. All have intrinsic dimensions, descriptive alt text, and verified successful browser loads; the primary maintenance image has high fetch priority.
+- **Copy and affordances:** Existing hero messaging is retained and rearranged. The primary CTA targets `#contact`, the service link targets `#services`, and the lower callout targets `#experience`.
+- **Accessibility and behavior:** Every hero image has meaningful alt text, links use visible focus styles, reduced-motion preferences continue to disable transitions, and the unchanged mobile menu, credentials, navigation, and quote form remain available.
+
+### Findings and fixes
+
+1. **P2 — tablet callout crowding:** The numeric `01` treatment overlapped the lower-right hero message at the 768 px breakpoint. **Fix:** removed the number and simplified the callout grid to a text-and-arrow layout. **Post-fix evidence:** the callout now fits on one clear column with no overlap at 768 px.
+2. **Requested testimonial refinements:** Removed the illustrative-testimonial disclaimer and its obsolete ARIA reference. Updated the testimonial supporting line to start with “Illustrative” rather than “Eight illustrative.”
+3. **Final pass:** Seven hero images loaded successfully, the three hero links expose the intended targets, a fresh-browser console check returned no warnings or errors, and desktop, tablet, and mobile views showed no actionable P0, P1, or P2 issues.
+
+### Contact Gradient Follow-up
+
+The parent contact section now transitions from the existing warm-paper background at the bottom to white at the top. Its charcoal contact panel remains unchanged, preserving the established form and information contrast. Browser-rendered review confirmed the gradient, contact panel, and footer remain legible.
+
 final result: passed
