@@ -1,0 +1,12 @@
+{
+  "name": "9sevengroup-website",
+  "version": "1.0.0",
+  "description": "9Seven Group corporate website with serverless quote request function",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/submit-quote.test.js"
+  },
+  "keywords": [],
+  "author": "9Seven Group",
+  "license": "ISC"
+}
